@@ -11,15 +11,16 @@ class StoryList extends React.Component {
   }
 
   renderList () {
-    console.log(this.props.stories);
     return this.props.stories.map(story => {
       return(
         <li
           key={story._id}
           className="list-group-item clearfix"
           >
-          Story - {story._id}
-
+          <h2>{story.title}</h2>
+          <div>
+            {story.content}
+          </div>
           <button
             className="btn btn-danger pull-right"
             onClick={() => this.onStoryRemove(story)}
@@ -56,8 +57,6 @@ class StoryList extends React.Component {
 
 export default createContainer(() => {
     Meteor.subscribe('stories');
-
-    console.log(Stories.find({}).fetch());
 
     return { stories: Stories.find({}).fetch() };
 }, StoryList);

@@ -63,14 +63,12 @@ class Header extends React.Component {
                 <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Stories <span className="caret"></span></a>
                 <ul className="dropdown-menu">
                   <li><a href="#">My Stories</a></li>
-                  <li><a
-                    href="#"
-                    onClick={this.onCreateStoryClick.bind(this)}
-                    >Write Story
-                  </a></li>
+                  <li><Link to="/story_edit">Write Story</Link></li>
                 </ul>
               </li>
               <li><Accounts /></li>
+
+              <li><a href="#" onClick={this.onCreateStoryClick}>Create Story</a></li>
 
             </ul>
           </div>

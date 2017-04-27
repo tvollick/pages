@@ -23,6 +23,15 @@ Meteor.methods({
 
   'stories.remove': function (story) {
     return Stories.remove(story)
+  },
+
+  'story.update': function (story, data) {
+    Stories.update(story, {
+      $set: {
+        title: data.title,
+        content: data.content
+      }
+    });
   }
 
 });

@@ -8,7 +8,6 @@ class PagesList extends React.Component {
 
   // this really shouldn't be here...
   onPageRemove (page) {
-    console.log('here');
     Meteor.call('pages.remove', page);
   }
 

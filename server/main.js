@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 
-//Colections
+//Mongo DB Collections
 import { Pages } from '../imports/collections/pages';
 import { Stories } from '../imports/collections/stories';
 
