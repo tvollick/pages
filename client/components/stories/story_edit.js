@@ -1,5 +1,6 @@
 import React from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
+import ReactQuill from 'react-quill';
 
 import { Stories } from '../../../imports/collections/stories';
 
@@ -18,7 +19,6 @@ class StoryEdit extends React.Component {
 
   componentWillMount () {
     if (this.props.story) {
-      console.log('willMount');
       const { title, content } = this.props.story;
       this.setState({
         title,
@@ -28,7 +28,6 @@ class StoryEdit extends React.Component {
   }
 
   componentWillReceiveProps(next){
-    console.log('willReceiveProps'); 
     this.setState({
       title: next.story.title,
       content: next.story.content
@@ -47,12 +46,12 @@ class StoryEdit extends React.Component {
     this.setState({title: event.target.value});
   }
 
-  handleContentChange (event) {
-    this.setState({content: event.target.value});
+  handleContentChange (value) {
+    console.log(value);
+    this.setState({content: value});
   }
 
   render () {
-
     return (
       <div>
         <form onSubmit={this.handleFormSubmit.bind(this)}>
@@ -62,10 +61,18 @@ class StoryEdit extends React.Component {
             <input className="form-control" type="text" value={this.state.title} onChange={this.handleTitleChange} />
           </div>
           <div className="form-group">
-            <textarea rows="10" className="form-control" value={this.state.content} onChange={this.handleContentChange} />
+
           </div>
           <input type="submit" value="Submit" className="btn btn-primary" />
         </form>
+        <div>
+          <ReactQuill
+            theme="snow"
+            value={this.state.content}
+            onChange={this.handleContentChange}
+          />
+        </div>
+
       </div>
     );
   }
