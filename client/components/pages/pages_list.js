@@ -26,6 +26,12 @@ class PagesList extends React.Component {
           </button>
 
           <Link
+            to={`/page_edit/${page._id}`}
+            className="btn btn-primary pull-right">
+            Edit Page
+          </Link>
+
+          <Link
             to={`/page/${page._id}`}
             className="btn btn-default pull-right"
           >
@@ -50,5 +56,5 @@ class PagesList extends React.Component {
 export default createContainer (() => {
   Meteor.subscribe('pages');
 
-  return { pages: Pages.find({}).fetch() }
+  return { pages: Pages.find({}).fetch() };
 }, PagesList);

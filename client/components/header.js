@@ -7,13 +7,8 @@ class Header extends React.Component {
 
   constructor(props) {
     super(props);
-    this.testMethod = this.testMethod.bind(this);
   }
 
-  testMethod () {
-    // this.context.router.push(`/page_edit/${page}`);
-    console.log(this.context); 
-  }
 
   //temp
   onCreatePageClick (e) {
@@ -22,9 +17,13 @@ class Header extends React.Component {
     Meteor.call('pages.insert', (error, page) => {
       // browserHistory.push(`/page_edit/${page}`);
       // this.context.router.push(`/page_edit/${page}`);
-      this.testMethod();
     });
+  }
 
+  onCreateStoryClick (e) {
+    e.preventDefault();
+
+    Meteor.call('stories.insert');
   }
 
   render () {
@@ -64,7 +63,11 @@ class Header extends React.Component {
                 <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Stories <span className="caret"></span></a>
                 <ul className="dropdown-menu">
                   <li><a href="#">My Stories</a></li>
-                  <li><a href="#">Write Story</a></li>
+                  <li><a
+                    href="#"
+                    onClick={this.onCreateStoryClick.bind(this)}
+                    >Write Story
+                  </a></li>
                 </ul>
               </li>
               <li><Accounts /></li>
