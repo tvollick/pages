@@ -15,7 +15,7 @@ class PagesList extends React.Component {
     return this.props.pages.map(page => {
       return (
         <li className="list-group-item clearfix" key={page._id}>
-          Page Group {page._id}
+          <h3> {page.title} </h3>
 
           <button
             className="btn btn-danger pull-right"

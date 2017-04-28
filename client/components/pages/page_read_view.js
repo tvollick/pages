@@ -6,10 +6,19 @@ import { Pages } from '../../../imports/collections/pages';
 
 class PageReadView extends React.Component {
 
+  renderTitle () {
+    if (this.props.page) {
+      return (
+        this.props.page.title
+      );
+    }
+  }
+
   render () {
     return (
       <div>
-        <StoryList page={this.props.page} />
+        <h1>{this.renderTitle()}</h1>
+        <StoryList page={this.props.page} pageId={this.props.match.params.pageId} />
       </div>
     );
   }

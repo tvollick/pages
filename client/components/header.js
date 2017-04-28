@@ -48,7 +48,7 @@ class Header extends React.Component {
                 <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span className="caret"></span></a>
                 <ul className="dropdown-menu">
                   <li>
-                    <Link to="/pages"> My Subscibtions </Link>
+                    <Link to="/pages"> My Pages </Link>
                   </li>
                   <li><a
                     href="#"
@@ -62,7 +62,7 @@ class Header extends React.Component {
               <li className="dropdown">
                 <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Stories <span className="caret"></span></a>
                 <ul className="dropdown-menu">
-                  <li><a href="#">My Stories</a></li>
+                  <li><Link to="/notebook">My Stories</Link></li>
                   <li><Link to="/story_edit">Write Story</Link></li>
                 </ul>
               </li>

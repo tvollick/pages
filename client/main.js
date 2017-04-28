@@ -14,6 +14,7 @@ import PageEditView from './components/pages/page_edit_view';
 
 import StoryRead from './components/stories/story_read';
 import StoryEdit from './components/stories/story_edit';
+import StoryListAuthor from './components/stories/story_list_author';
 
 const routes = (
   <Router>
@@ -26,6 +27,9 @@ const routes = (
 
       <Route path="/story/:storyId" component={StoryRead} />
       <Route path="/story_edit/:storyId?" component={StoryEdit} />
+
+      <Route path="/notebook" component={StoryListAuthor} />
+
 
     </App>
   </Router>

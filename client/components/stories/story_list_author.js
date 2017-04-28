@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { Stories } from '../../../imports/collections/stories';
 
-class StoryList extends React.Component {
+class StoryListAuthor extends React.Component {
 
   onStoryRemove (story) {
     Meteor.call('stories.remove', story);
@@ -18,6 +18,18 @@ class StoryList extends React.Component {
           className="list-group-item clearfix"
           >
           <h2>{story.title}</h2>
+          <button
+            className="btn btn-danger pull-right"
+            onClick={() => this.onStoryRemove(story)}
+          >
+            Remove Story
+          </button>
+
+          <Link
+            to={`/story_edit/${story._id}`}
+            className="btn btn-primary pull-right">
+            Edit Story
+          </Link>
 
           <Link
             to={`/story/${story._id}`}
@@ -38,11 +50,13 @@ class StoryList extends React.Component {
       </ul>
     );
   }
+
 }
 
+
 export default createContainer((props) => {
-    Meteor.subscribe('stories');
+    Meteor.subscribe('stories.author');
 
-    return { stories: Stories.find({pages: props.pageId}).fetch() };
+    return { stories: Stories.find({}).fetch() };
 
-}, StoryList);
+}, StoryListAuthor);

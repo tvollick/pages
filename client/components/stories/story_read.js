@@ -4,17 +4,17 @@ import { createContainer } from 'meteor/react-meteor-data';
 import { Stories } from '../../../imports/collections/stories';
 
 class StoryRead extends React.Component {
+
+
   renderStory () {
     if (this.props.story) {
 
       const { title, content } = this.props.story;
 
       return (
-        <div>
+        <div className="col-md-8 col-md-offset-2">
           <h1>{title}</h1>
-          <div>
-            {content}
-          </div>
+          <div dangerouslySetInnerHTML={{__html: content}} />
 
         </div>
       );

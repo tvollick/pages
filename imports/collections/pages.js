@@ -6,10 +6,21 @@ Meteor.methods({
     return Pages.insert({
       title: '', // string
       admins: [this.userId], // array of ints
-      readers: [], // array of ints
-      writers: [], // could be same as readers
+      readers: [this.userId], // array of ints
+      writers: [this.userId], // could be same as readers
       privacy: 1, // int ? 1='private', 2='public'
       createdAt: new Date() // timestamp
+    });
+  },
+
+  'pages.update': function (page, data) {
+
+    const {title} = data;
+
+    return Pages.update(page, {
+      $set: {
+        title
+      }
     });
   },
 
