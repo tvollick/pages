@@ -7,6 +7,7 @@ Meteor.methods({
       title: '', // string
       admins: [this.userId], // array of ints
       readers: [this.userId], // array of ints
+      memberRequests:[],
       writers: [this.userId], // could be same as readers
       privacy: 1, // int ? 1='private', 2='public'
       createdAt: new Date() // timestamp
@@ -20,6 +21,19 @@ Meteor.methods({
     return Pages.update(page, {
       $set: {
         title
+      }
+    });
+  },
+
+  'pages.requestMembership': function (data) {
+    console.log(data);
+    // return Pages.update(page, {
+    //   $
+    // });
+    const { page } = data;
+    return Pages.update(page, {
+      $push: {
+        memberRequests: this.userId
       }
     });
   },

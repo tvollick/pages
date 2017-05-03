@@ -11,6 +11,7 @@ import Home from './components/home';
 import PagesMain from './components/pages/pages_main';
 import PageReadView from './components/pages/page_read_view';
 import PageEditView from './components/pages/page_edit_view';
+import PageSearch from './components/views/page_search';
 
 import StoryRead from './components/stories/story_read';
 import StoryEdit from './components/stories/story_edit';
@@ -24,12 +25,12 @@ const routes = (
       <Route path="/pages" component={PagesMain} />
       <Route path="/page/:pageId" component={PageReadView} />
       <Route path="/page_edit/:pageId" component={PageEditView} />
+      <Route path="/page_search" component={PageSearch} />
 
       <Route path="/story/:storyId" component={StoryRead} />
       <Route path="/story_edit/:storyId?" component={StoryEdit} />
 
       <Route path="/notebook" component={StoryListAuthor} />
-
 
     </App>
   </Router>

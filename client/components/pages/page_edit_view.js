@@ -1,6 +1,8 @@
 import React from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 
+import MembersRequests from './members_requests';
+
 import { Pages } from '../../../imports/collections/pages';
 
 class PageEditView extends React.Component {
@@ -86,6 +88,9 @@ class PageEditView extends React.Component {
           >
             Save Page Options
           </button>
+
+          <MembersRequests /> 
+
           { this.renderSaveStatus()}
         </div>
       </div>

@@ -9,7 +9,6 @@ class Header extends React.Component {
     super(props);
   }
 
-
   //temp
   onCreatePageClick (e) {
     e.preventDefault();
@@ -55,7 +54,7 @@ class Header extends React.Component {
                     onClick={this.onCreatePageClick.bind(this)}
                     >Create Page</a></li>
                   <li><a href="#">Pages I Manage</a></li>
-                  <li><a href="#">Search For Pages</a></li>
+                  <li><Link to="/page_search">Search For Pages</Link></li>
                 </ul>
               </li>
 
