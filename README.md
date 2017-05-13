@@ -12,3 +12,5 @@
   * meteor remove autopublish
   * npm install --save react react-dom react-router-dom
   * (bootstrap old) meteor add twbs:bootstrap@3.3.6
+
+## SUUUUUUHHHHHH DUDE.?
