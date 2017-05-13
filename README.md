@@ -1,8 +1,9 @@
 # Pages App
 
 ## Development Environment Setup instructions
-  1. npm install
-  2. meteor (this runs meteor server on localhost:3000 if available)
+  1. Download and install Meteor 
+  2. npm install
+  3. meteor (this runs meteor server on localhost:3000 if available)
     * ctrl + c = stops meteor local server
 
 ## Meteor Dependencies and settings
