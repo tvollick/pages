@@ -3,7 +3,7 @@
 ## Development Environment Setup instructions
   1. npm install
   2. meteor (this runs meteor server on localhost:3000 if available)
-    * ctrl + c = stops meteor
+    * ctrl + c = stops meteor local server
 
 ## Meteor Dependencies and settings
   * meteor add react-meteor-data
